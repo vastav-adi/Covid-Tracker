@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>wow</title>
+	<style type="text/css">
+		th {font-size: small;}
+	</style>
+</head>
+<body>
+	<h1>{{n}}</h1>
+	<!-- <ol>
+	{% for i in range(n)%}
+	<li> Country <span>{{x[i]}}</span>  ___  Province: <span>{{y[i]}}</span> ___  Confirmed: <span>{{c[i]}}</span>  ___  Recovered: <span>{{r[i]}}</span>  ___  deaths: <span>{{d[i]}}</span></li>
+	{% endfor %}
+	</ol> -->
+
+	<table>
+		<tr>
+			<th>Country</th>
+			<th>Province</th>
+			<th>Confirmed</th>
+			<th>Recovered</th>
+			<th>Deaths</th>
+		</tr>
+		{%for i in range(n)%}
+		<tr>
+			<td>{{x[i]}}</td>
+			<td>{{y[i]}}</td>
+			<td>{{c[i]}}</td>
+			<td>{{r[i]}}</td>
+			<td>{{d[i]}}</td>			
+		</tr>
+		{% endfor %}
+
+	</table>
+
+	<ol>
+		<i style = "font-size:20px;">Unique Countries</i>
+		{%for i in ux%}
+		<li>
+			{{i}} 
+		</li>
+		{%endfor%}
+	</ol>
+
+</body></html>
