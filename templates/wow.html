@@ -4,36 +4,48 @@
 	<title>wow</title>
 	<style type="text/css">
 		th {font-size: small;}
+		
+		td,#top{border: 2px solid black;
+			padding: 10px;
+			text-align: center;
+		}
+
+		#metrics{font-size: larger; font-weight: bold;} 
+		#thh{font-weight: bolder;}
+		td,#table{ padding: 10px; }
 	</style>
+	
 </head>
 <body>
-	<h1>{{n}}</h1>
+	<div id="top">
+		<p style="text-align:center; "><span id="metrics">Confirmed</span>: {{tconf}}  ,  <span id="metrics"> Recovered </span> : {{trecov}} ,  <span id="metrics"> deaths </span> : {{tdeaths}}</p>
+	</div>
 	<!-- <ol>
 	{% for i in range(n)%}
 	<li> Country <span>{{x[i]}}</span>  ___  Province: <span>{{y[i]}}</span> ___  Confirmed: <span>{{c[i]}}</span>  ___  Recovered: <span>{{r[i]}}</span>  ___  deaths: <span>{{d[i]}}</span></li>
 	{% endfor %}
 	</ol> -->
+	<div id="table">
+		<table>
+			<tr id="thh">
+				<td>Country</td>
+				<td>Province</td>
+				<td>Confirmed</td>
+				<td>Recovered</td>
+				<td>Deaths</td>
+			</tr>
+			{%for i in range(n)%}
+			<tr>
+				<td>{{x[i]}}</td>
+				<td>{{y[i]}}</td>
+				<td>{{c[i]}}</td>
+				<td>{{r[i]}}</td>
+				<td>{{d[i]}}</td>			
+			</tr>
+			{% endfor %}
 
-	<table>
-		<tr>
-			<th>Country</th>
-			<th>Province</th>
-			<th>Confirmed</th>
-			<th>Recovered</th>
-			<th>Deaths</th>
-		</tr>
-		{%for i in range(n)%}
-		<tr>
-			<td>{{x[i]}}</td>
-			<td>{{y[i]}}</td>
-			<td>{{c[i]}}</td>
-			<td>{{r[i]}}</td>
-			<td>{{d[i]}}</td>			
-		</tr>
-		{% endfor %}
-
-	</table>
-
+		</table>
+	</div>
 	<ol>
 		<i style = "font-size:20px;">Unique Countries</i>
 		{%for i in ux%}
