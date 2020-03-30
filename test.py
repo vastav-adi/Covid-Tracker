@@ -24,7 +24,7 @@ r = []
 @app.route("/")
 def wow():
 	tconf=json_response['latest']['confirmed']
-	trecov=json_response['latest']['recovered']
+	#trecov=json_response['latest']['recovered']
 	tdeaths=json_response['latest']['deaths']
 
 	n = len(json_response['locations'])
@@ -44,7 +44,7 @@ def wow():
 		r.append(json_response['locations'][i]['latest']['recovered'])
 		d.append(json_response['locations'][i]['latest']['deaths'])
 	len_set = len(unique_x)
-	return render_template("wow.html",x=x,n=n,y=y,c=c,r=r,d=d,ux=unique_x,len_set=len_set,tconf=tconf,trecov=trecov,tdeaths=tdeaths)
+	return render_template("wow.html",x=x,n=n,y=y,c=c,r=r,d=d,ux=unique_x,len_set=len_set,tconf=tconf,tdeaths=tdeaths)
 	# return render_template("wow.html",conf=conf)
 
 

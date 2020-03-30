@@ -18,7 +18,7 @@
 </head>
 <body>
 	<div id="top">
-		<p style="text-align:center; "><span id="metrics">Confirmed</span>: {{tconf}}  ,  <span id="metrics"> Recovered </span> : {{trecov}} ,  <span id="metrics"> deaths </span> : {{tdeaths}}</p>
+		<p style="text-align:center; "><span id="metrics">Confirmed</span>: {{tconf}}  ,  <span id="metrics"> deaths </span> : {{tdeaths}}</p>
 	</div>
 	<!-- <ol>
 	{% for i in range(n)%}
@@ -31,7 +31,7 @@
 				<td>Country</td>
 				<td>Province</td>
 				<td>Confirmed</td>
-				<td>Recovered</td>
+				
 				<td>Deaths</td>
 			</tr>
 			{%for i in range(n)%}
@@ -39,7 +39,7 @@
 				<td>{{x[i]}}</td>
 				<td>{{y[i]}}</td>
 				<td>{{c[i]}}</td>
-				<td>{{r[i]}}</td>
+				
 				<td>{{d[i]}}</td>			
 			</tr>
 			{% endfor %}
