@@ -21,6 +21,17 @@ d = []
 r = []
 
 
+def return_country_population():
+	popu= []
+	n = len(json_response['locations'])
+	for i in range(n):
+		popu.append(json_response['locations'][i]['country_population'])
+	
+	return popu
+
+def return_unq_stats():
+	
+
 @app.route("/")
 def wow():
 	tconf=json_response['latest']['confirmed']
@@ -39,13 +50,16 @@ def wow():
 		else:
 			y.append(json_response['locations'][i]['province'])
 
-
 		c.append(json_response['locations'][i]['latest']['confirmed'])
 		r.append(json_response['locations'][i]['latest']['recovered'])
 		d.append(json_response['locations'][i]['latest']['deaths'])
+
 	len_set = len(unique_x)
-	return render_template("wow.html",x=x,n=n,y=y,c=c,r=r,d=d,ux=unique_x,len_set=len_set,tconf=tconf,tdeaths=tdeaths)
-	# return render_template("wow.html",conf=conf)
+
+	c_population = return_country_population();
+
+	return render_template("wow.html",x=x,n=n,y=y,c=c,r=r,d=d,ux=unique_x,len_set=len_set,tconf=tconf,tdeaths=tdeaths, cpop = c_population)
+	
 
 
 @app.route("/plot")

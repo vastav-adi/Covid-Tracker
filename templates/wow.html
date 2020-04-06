@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 	<title>wow</title>
-	<style type="text/css">
-		th {font-size: small;}
-		
-		td,#top{border: 2px solid black;
-			padding: 10px;
+	
+	<style>
+		#metrics{
+			font-size: larger;
+			font-weight: bold;
+		}
+		.jumbotron{
 			text-align: center;
 		}
-
-		#metrics{font-size: larger; font-weight: bold;} 
-		#thh{font-weight: bolder;}
-		td,#table{ padding: 10px; }
+		
 	</style>
 	
 </head>
 <body>
-	<div id="top">
-		<p style="text-align:center; "><span id="metrics">Confirmed</span>: {{tconf}}  ,  <span id="metrics"> deaths </span> : {{tdeaths}}</p>
-	</div>
-	<!-- <ol>
-	{% for i in range(n)%}
-	<li> Country <span>{{x[i]}}</span>  ___  Province: <span>{{y[i]}}</span> ___  Confirmed: <span>{{c[i]}}</span>  ___  Recovered: <span>{{r[i]}}</span>  ___  deaths: <span>{{d[i]}}</span></li>
-	{% endfor %}
-	</ol> -->
-	<center>
-	<div id="table">
-		<table>
-			<tr id="thh">
-				<td>Country</td>
+	
+		<div class="jumbotron">
+			<span id="metrics">Confirmed</span>: {{tconf}}  ,  <span id="metrics"> deaths </span> : {{tdeaths}}
+		</div>
+		
+	
+	<div class="container">		
+		<table class="table table-striped table-bordered table-hover table-condensed">
+			<thead>
+				<td><b>Country</b></td>
 				<!-- <td>Province</td> -->
-				<td>Confirmed</td>
+				<td><b>Population</b></td>
+				<td><b>Confirmed</b></td>
 				
-				<td>Deaths</td>
-			</tr>
+				<td><b>Deaths</b></td>
+			</thead>
 			{%for i in range(n)%}
 			<tr>
 				<td>{{x[i]}}</td>
-				<!-- <td>{{y[i]}}</td> -->
+				<td>{{cpop[i]}}</td>
 				<td>{{c[i]}}</td>
-				
 				<td>{{d[i]}}</td>			
 			</tr>
 			{% endfor %}
 
 		</table>
+
 	</div>
-	</center>
+	
 	<ol>
 		<i style = "font-size:20px;">Unique Countries</i>
 		{%for i in ux%}
